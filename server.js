@@ -13,12 +13,7 @@ var middleware = {
 	}
 };
 
-//app.use(middleware.requireAuthentication);
 app.use(middleware.logger);
-
-// app.get('/', function (req, res) {
-// 	res.send('Hello Express');
-// });
 
 app.get('/about', middleware.requireAuthentication,function (req, res) {
 	res.send('About Us!');
